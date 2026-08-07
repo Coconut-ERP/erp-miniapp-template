@@ -17,6 +17,10 @@ Before generating or reviewing UI, **read the matching skill** under `skills/`. 
 | Accessibility review | [skills/accessibility-review.md](skills/accessibility-review.md) |
 | Performance review | [skills/performance-review.md](skills/performance-review.md) |
 | Replace local UI with library | [skills/refactor.md](skills/refactor.md) |
+| ERP boot / `createMiniApp` / wire backend | [skills/erp.md](skills/erp.md) |
+| `schema.json` / `assertSchema` | [skills/erp-schema.md](skills/erp-schema.md) |
+| Records, relations, ObjectHandle | [skills/erp-data.md](skills/erp-data.md) |
+| initData / session / `X-Init-Data` | [skills/erp-session.md](skills/erp-session.md) |
 
 Index: [skills/README.md](skills/README.md)
 
@@ -32,11 +36,14 @@ Index: [skills/README.md](skills/README.md)
    - Library components: semantic tokens (`bg-primary`, `text-muted-foreground`, `bg-surface`, …).
    - App chrome (shell/sidebar/canvas): Tailwind classes **inline** on elements.
    - Never: `--app-*` CSS vars, `bg-[var(--…)]`, color palette `const` objects.
-8. API keys / ERP credentials stay server-side (`lib/api`, route handlers). Never in client components.
+8. API keys / ERP credentials stay server-side (`lib/erp`, `lib/api`, route handlers). Never in client components.
+9. Data layer: `erp-sdk` only on the server. FE talks to app `/api/*` with `X-Init-Data`; see [skills/erp.md](skills/erp.md).
 
 ## Folder layout
 
 ```text
+schema.json               # mini-app table declaration (when wired to ERP)
+scripts/schema.ts         # generate schema.json from src/lib/erp/schema.ts
 src/
   app/                    # routes + app/api/*
   components/
@@ -47,8 +54,9 @@ src/
   constants/              # nav.ts, pages.ts (copy only)
   hooks/                  # React Query
   lib/
-    api/                  # server logic + seed.ts
-    client/api.ts         # browser fetch
+    api/                  # server domain services + route helpers
+    erp/                  # createMiniApp, schema, session, records (ERP only)
+    client/               # browser fetch + initData bridge
     date.ts
   domain/types.ts         # DTOs
 ```
@@ -62,8 +70,12 @@ bun run typecheck
 bun run lint
 bun run format
 bun run build
+bun run schema            # regenerate schema.json from src/lib/erp/schema.ts
+bunx erp doctor           # env + ERP connectivity (needs .env.local)
 ```
 
 ## Library docs
 
 When composing `@erp/miniapp-ui`, read package docs under `../../packages/miniapp-ui/docs/` (components, foundations, conventions, patterns, recipes) before inventing APIs.
+
+When wiring ERP data, follow [skills/erp.md](skills/erp.md) and the reference app `../miniapp-workshop`.

@@ -2,17 +2,22 @@
 
 Reference **mini app layout** for `@erp/miniapp-ui` — clone this project as a starting point.
 
-## Local library (before publish)
+## Install
 
-Kit pins `@erp/miniapp-ui` via `file:../../miniapp-ui` while testing Unreleased Sidebar.
+Uses published `@erp/miniapp-ui` **v0.2.0** (GitHub Release tarball).
 
 ```bash
-cd ../../miniapp-ui && npm run build && cd -
-yarn install
-yarn dev
+bun install
+bun run dev
 ```
 
-After GitHub Release **v0.1.1**, switch `package.json` back to the release tarball URL.
+Lint / format (Biome, same as `examples/miniapp-hr`):
+
+```bash
+bun run lint
+bun run format
+bun run typecheck
+```
 
 ## Folder layout (standard)
 

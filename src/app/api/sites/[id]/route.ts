@@ -1,5 +1,5 @@
-import { getSite } from "@/lib/api/sites";
 import { withApi } from "@/lib/api/route";
+import { getSite } from "@/lib/api/sites";
 
 export const dynamic = "force-dynamic";
 

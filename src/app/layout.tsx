@@ -1,6 +1,6 @@
+import { Toaster } from "@erp/miniapp-ui";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Toaster } from "@erp/miniapp-ui";
 import { AppShell } from "@/components/app-shell";
 import { Providers } from "@/components/providers";
 import "./globals.css";
@@ -22,4 +22,4 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
-AppShell
+AppShell;

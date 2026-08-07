@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { api } from "@/lib/client/api";
 import type { SiteDetail, SitesResponse } from "@/domain/types";
+import { api } from "@/lib/client/api";
 
 export function useSites() {
   return useQuery({

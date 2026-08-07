@@ -40,7 +40,9 @@ export function PipelineTable({ rows, onEdit, onDelete }: PipelineTableProps) {
           {rows.map((row) => (
             <TableRow key={row.id}>
               <TableCell className="font-semibold text-foreground">{row.name}</TableCell>
-              <TableCell className="tabular-nums text-muted-foreground">{row.stages.length}</TableCell>
+              <TableCell className="tabular-nums text-muted-foreground">
+                {row.stages.length}
+              </TableCell>
               <TableCell className="tabular-nums text-muted-foreground">{row.deals}</TableCell>
               <TableCell className="font-medium tabular-nums">{row.totalValue}</TableCell>
               <TableCell className="text-muted-foreground">{row.created}</TableCell>

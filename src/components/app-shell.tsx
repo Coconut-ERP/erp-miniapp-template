@@ -1,8 +1,15 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, type ReactNode } from "react";
+import {
+  AppSidebar,
+  type AppSidebarItem,
+  Button,
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@erp/miniapp-ui";
 import {
   ClipboardListIcon,
   LayoutDashboardIcon,
@@ -10,16 +17,9 @@ import {
   MenuIcon,
   TableIcon,
 } from "lucide-react";
-import {
-  AppSidebar,
-  Button,
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  type AppSidebarItem,
-} from "@erp/miniapp-ui";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { type ReactNode, useState } from "react";
 import { APP_SHELL } from "@/constants/nav";
 
 const SIDEBAR_ITEMS: AppSidebarItem[] = [
@@ -32,7 +32,12 @@ const SIDEBAR_ITEMS: AppSidebarItem[] = [
   },
   { id: "demos", label: "Demos", type: "section" },
   { id: "/table", label: "Table", href: "/table", icon: <TableIcon /> },
-  { id: "/requests/new", label: "Multi-step form", href: "/requests/new", icon: <ClipboardListIcon /> },
+  {
+    id: "/requests/new",
+    label: "Multi-step form",
+    href: "/requests/new",
+    icon: <ClipboardListIcon />,
+  },
 ];
 
 function activeNavId(pathname: string): string {

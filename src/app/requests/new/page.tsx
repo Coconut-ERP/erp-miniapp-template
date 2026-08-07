@@ -1,5 +1,5 @@
-import { Suspense } from "react";
 import { LoadingRows } from "@erp/miniapp-ui";
+import { Suspense } from "react";
 import { FormPage } from "@/components/page/form-page";
 
 export default function NewServiceRequestPage() {

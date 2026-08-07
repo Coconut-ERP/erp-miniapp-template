@@ -1,8 +1,16 @@
 "use client";
 
-import Link from "next/link";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  PageHeader,
+} from "@erp/miniapp-ui";
 import { ArrowRightIcon } from "lucide-react";
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, PageHeader } from "@erp/miniapp-ui";
+import Link from "next/link";
 import { HUB_PAGE } from "@/constants/pages";
 
 const DEMOS = [

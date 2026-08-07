@@ -1,11 +1,5 @@
 "use client";
 
-/**
- * Multi-step form template — field types, validation, conditional fields, review step.
- */
-import { useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
 import {
   Accordion,
   AccordionContent,
@@ -43,6 +37,12 @@ import {
   Switch,
   Textarea,
 } from "@erp/miniapp-ui";
+import { useRouter } from "next/navigation";
+/**
+ * Multi-step form template — field types, validation, conditional fields, review step.
+ */
+import { useMemo, useState } from "react";
+import { toast } from "sonner";
 import { FORM_PAGE } from "@/constants/pages";
 import type {
   RequestPriority,
@@ -208,10 +208,12 @@ export function ServiceRequestForm({ options }: { options: ServiceRequestFormOpt
     }
 
     for (let i = currentIndex; i < targetIdx; i++) {
-      const stepErrors = validateStep(STEPS[i]!, state);
+      const step = STEPS[i];
+      if (!step) continue;
+      const stepErrors = validateStep(step, state);
       if (Object.keys(stepErrors).length > 0) {
         setErrors(stepErrors);
-        setStep(STEPS[i]!);
+        setStep(step);
         return;
       }
     }
@@ -444,9 +446,7 @@ export function ServiceRequestForm({ options }: { options: ServiceRequestFormOpt
                 <FieldLabel>{FORM_PAGE.labels.severity}</FieldLabel>
                 <Select
                   value={state.severity || undefined}
-                  onValueChange={(v) =>
-                    patch("severity", v as ServiceRequestInput["severity"])
-                  }
+                  onValueChange={(v) => patch("severity", v as ServiceRequestInput["severity"])}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={FORM_PAGE.placeholders.severity} />
@@ -482,7 +482,11 @@ export function ServiceRequestForm({ options }: { options: ServiceRequestFormOpt
               </div>
             </FieldSet>
 
-            <Accordion type="single" collapsible className="rounded-lg border border-border/60 px-4">
+            <Accordion
+              type="single"
+              collapsible
+              className="rounded-lg border border-border/60 px-4"
+            >
               <AccordionItem value="advanced">
                 <AccordionTrigger>{FORM_PAGE.sections.advanced.title}</AccordionTrigger>
                 <AccordionContent>
@@ -583,10 +587,7 @@ export function ServiceRequestForm({ options }: { options: ServiceRequestFormOpt
                   {state.notifyIds.length === 0
                     ? "—"
                     : state.notifyIds
-                        .map(
-                          (id) =>
-                            options.notifyOptions.find((n) => n.id === id)?.label ?? id,
-                        )
+                        .map((id) => options.notifyOptions.find((n) => n.id === id)?.label ?? id)
                         .join(", ")}
                 </dd>
               </div>

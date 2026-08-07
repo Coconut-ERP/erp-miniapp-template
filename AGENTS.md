@@ -56,10 +56,12 @@ src/
 ## Commands
 
 ```bash
-npm install
-npm run dev
-npm run typecheck
-npm run build
+bun install
+bun run dev
+bun run typecheck
+bun run lint
+bun run format
+bun run build
 ```
 
 ## Library docs

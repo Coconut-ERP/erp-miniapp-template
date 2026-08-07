@@ -1,7 +1,5 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { LayoutGridIcon, UsersIcon, WarehouseIcon } from "lucide-react";
 import {
   EmptyState,
   ErrorState,
@@ -10,6 +8,8 @@ import {
   SearchField,
   StatisticCard,
 } from "@erp/miniapp-ui";
+import { LayoutGridIcon, UsersIcon, WarehouseIcon } from "lucide-react";
+import { useMemo, useState } from "react";
 import { EntityOverviewCard } from "@/components/features/entity-overview-card";
 import { LIST_PAGE } from "@/constants/pages";
 import { useSites } from "@/hooks/use-sites";
@@ -41,11 +41,7 @@ export function ListDashboardPage() {
     return (
       <>
         <PageHeader {...LIST_PAGE.header} className="[&_h1]:text-2xl" />
-        <ErrorState
-          title={LIST_PAGE.errorTitle}
-          error={error}
-          onRetry={() => void refetch()}
-        />
+        <ErrorState title={LIST_PAGE.errorTitle} error={error} onRetry={() => void refetch()} />
       </>
     );
   }

@@ -1,13 +1,7 @@
 "use client";
 
+import { Button, EmptyState, ErrorState, LoadingRows, PageHeader } from "@erp/miniapp-ui";
 import Link from "next/link";
-import {
-  Button,
-  EmptyState,
-  ErrorState,
-  LoadingRows,
-  PageHeader,
-} from "@erp/miniapp-ui";
 import { EntityMembersTable } from "@/components/features/entity-members-table";
 import { DETAIL_PAGE } from "@/constants/pages";
 import { useSite } from "@/hooks/use-sites";
@@ -34,11 +28,7 @@ export function DetailPage({ siteId }: { siteId: string }) {
     return (
       <>
         <PageHeader {...DETAIL_PAGE.fallbackHeader} actions={assignAction} />
-        <ErrorState
-          title={DETAIL_PAGE.errorTitle}
-          error={error}
-          onRetry={() => void refetch()}
-        />
+        <ErrorState title={DETAIL_PAGE.errorTitle} error={error} onRetry={() => void refetch()} />
       </>
     );
   }

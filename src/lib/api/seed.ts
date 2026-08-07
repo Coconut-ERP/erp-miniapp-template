@@ -1,8 +1,4 @@
-import type {
-  ServiceRequestFormOptions,
-  SiteDetail,
-  SitesResponse,
-} from "@/domain/types";
+import type { ServiceRequestFormOptions, SiteDetail, SitesResponse } from "@/domain/types";
 
 /**
  * Demo seed — replace with ERP record reads in lib/api/* when wiring a workspace.

@@ -1,9 +1,5 @@
 "use client";
 
-/**
- * Nested table with rowspan-style cells — from workshop-lines-table.tsx
- */
-import Link from "next/link";
 import {
   Button,
   EmptyState,
@@ -14,6 +10,10 @@ import {
   TableHeader,
   TableRow,
 } from "@erp/miniapp-ui";
+/**
+ * Nested table with rowspan-style cells — from workshop-lines-table.tsx
+ */
+import Link from "next/link";
 import { DETAIL_PAGE } from "@/constants/pages";
 import type { MemberRow, TeamDetail } from "@/domain/types";
 
@@ -59,13 +59,7 @@ function flattenMembers(members: MemberRow[]): FlatRow[] {
   return rows;
 }
 
-export function EntityMembersTable({
-  team,
-  siteId,
-}: {
-  team: TeamDetail;
-  siteId: string;
-}) {
+export function EntityMembersTable({ team }: { team: TeamDetail; siteId: string }) {
   if (team.members.length === 0) {
     return <EmptyState {...DETAIL_PAGE.emptyMembers} />;
   }
@@ -88,9 +82,7 @@ export function EntityMembersTable({
       <TableBody>
         {rows.map((row) => (
           <TableRow key={row.key}>
-            <TableCell className="font-medium">
-              {row.showMember ? row.member.name : null}
-            </TableCell>
+            <TableCell className="font-medium">{row.showMember ? row.member.name : null}</TableCell>
             <TableCell>{row.showMember ? row.member.role : null}</TableCell>
             <TableCell className="text-right tabular-nums">
               {row.showMember ? formatNumber(row.member.score) : null}

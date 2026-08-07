@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
 import {
   Avatar,
   AvatarFallback,
@@ -18,6 +17,7 @@ import {
   SortableList,
 } from "@erp/miniapp-ui";
 import { GripVerticalIcon, PencilIcon, PlusIcon, Trash2Icon } from "lucide-react";
+import { useEffect, useId, useState } from "react";
 import {
   DEFAULT_PIPELINE_PERSON,
   DEFAULT_PIPELINE_STAGES,
@@ -210,7 +210,9 @@ export function PipelineFormDialog({
                       }}
                     />
                   ) : (
-                    <span className="min-w-0 flex-1 truncate text-sm font-medium">{stage.name}</span>
+                    <span className="min-w-0 flex-1 truncate text-sm font-medium">
+                      {stage.name}
+                    </span>
                   )}
                   <Button
                     type="button"
@@ -255,11 +257,17 @@ export function PipelineFormDialog({
               }
               className="flex flex-wrap gap-4"
             >
-              <label className="inline-flex items-center gap-2 text-sm">
+              <label
+                htmlFor={`${formId}-access-all`}
+                className="inline-flex items-center gap-2 text-sm"
+              >
                 <RadioGroupItem value="all" id={`${formId}-access-all`} />
                 {copy.accessAll}
               </label>
-              <label className="inline-flex items-center gap-2 text-sm">
+              <label
+                htmlFor={`${formId}-access-selected`}
+                className="inline-flex items-center gap-2 text-sm"
+              >
                 <RadioGroupItem value="selected" id={`${formId}-access-selected`} />
                 {copy.accessSelected}
               </label>
@@ -276,7 +284,9 @@ export function PipelineFormDialog({
                   <Avatar size="sm">
                     <AvatarFallback>{initials(person.name)}</AvatarFallback>
                   </Avatar>
-                  <span className="min-w-0 flex-1 truncate text-sm font-semibold">{person.name}</span>
+                  <span className="min-w-0 flex-1 truncate text-sm font-semibold">
+                    {person.name}
+                  </span>
                   <Button
                     type="button"
                     variant="link"
@@ -296,7 +306,11 @@ export function PipelineFormDialog({
           <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
             {copy.cancel}
           </Button>
-          <Button type="submit" form={formId} className="bg-slate-900 text-white hover:bg-slate-800">
+          <Button
+            type="submit"
+            form={formId}
+            className="bg-slate-900 text-white hover:bg-slate-800"
+          >
             {isEdit ? copy.save : copy.create}
           </Button>
         </DialogFooter>

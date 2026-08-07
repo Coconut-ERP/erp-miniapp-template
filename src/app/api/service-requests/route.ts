@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
-import { createServiceRequest } from "@/lib/api/service-requests";
-import { withApi } from "@/lib/api/route";
 import type { ServiceRequestInput } from "@/domain/types";
+import { withApi } from "@/lib/api/route";
+import { createServiceRequest } from "@/lib/api/service-requests";
 
 export const dynamic = "force-dynamic";
 

@@ -1,14 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { Badge, Button, DashboardCard, Separator, StatisticCard } from "@erp/miniapp-ui";
 import { ArrowRightIcon } from "lucide-react";
-import {
-  Badge,
-  Button,
-  DashboardCard,
-  Separator,
-  StatisticCard,
-} from "@erp/miniapp-ui";
+import Link from "next/link";
 import { LIST_PAGE } from "@/constants/pages";
 import type { SiteSummary } from "@/domain/types";
 

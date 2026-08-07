@@ -106,7 +106,9 @@ export function HrmDashboard() {
               <CardTitle className="text-base font-semibold">{copy.workforce.title}</CardTitle>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <p className="text-3xl font-bold tabular-nums tracking-tight">{copy.workforce.value}</p>
+              <p className="text-3xl font-bold tabular-nums tracking-tight">
+                {copy.workforce.value}
+              </p>
               <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
                 {copy.workforce.badge}
               </Badge>
@@ -151,7 +153,9 @@ export function HrmDashboard() {
                   <div key={item.label} className="px-2 py-3 text-center">
                     <p className="text-base font-bold tabular-nums">
                       {item.value}{" "}
-                      <span className="text-xs font-medium text-muted-foreground">{item.label}</span>
+                      <span className="text-xs font-medium text-muted-foreground">
+                        {item.label}
+                      </span>
                     </p>
                   </div>
                 ))}
@@ -162,9 +166,15 @@ export function HrmDashboard() {
           <div className="flex flex-col gap-3 rounded-xl bg-primary px-5 py-4 text-primary-foreground sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-base font-semibold">{copy.runPayroll.title}</p>
-              <p className="mt-0.5 text-sm text-primary-foreground/90">{copy.runPayroll.description}</p>
+              <p className="mt-0.5 text-sm text-primary-foreground/90">
+                {copy.runPayroll.description}
+              </p>
             </div>
-            <Button type="button" size="sm" className="bg-white text-primary hover:bg-primary-foreground/90">
+            <Button
+              type="button"
+              size="sm"
+              className="bg-white text-primary hover:bg-primary-foreground/90"
+            >
               <SettingsIcon />
               {copy.runPayroll.action}
             </Button>
@@ -175,7 +185,12 @@ export function HrmDashboard() {
           className="xl:col-span-4"
           title={copy.attendance.title}
           action={
-            <Button type="button" variant="link" size="sm" className="h-auto gap-1 px-0 text-primary">
+            <Button
+              type="button"
+              variant="link"
+              size="sm"
+              className="h-auto gap-1 px-0 text-primary"
+            >
               {copy.viewLogs}
               <ChevronRightIcon className="size-3.5" />
             </Button>
@@ -214,9 +229,15 @@ export function HrmDashboard() {
           <CardHeader className="flex-row items-start justify-between gap-3 space-y-0">
             <div>
               <p className="text-sm text-primary-foreground/80">{copy.payroll.title}</p>
-              <p className="mt-1 text-3xl font-bold tabular-nums tracking-tight">{copy.payroll.value}</p>
+              <p className="mt-1 text-3xl font-bold tabular-nums tracking-tight">
+                {copy.payroll.value}
+              </p>
             </div>
-            <Button type="button" size="sm" className="bg-white text-primary hover:bg-primary-foreground/90">
+            <Button
+              type="button"
+              size="sm"
+              className="bg-white text-primary hover:bg-primary-foreground/90"
+            >
               <DownloadIcon />
               {copy.downloadPayslip}
             </Button>

@@ -16,7 +16,7 @@
     "schema": "bun run scripts/schema.ts"
   },
   "dependencies": {
-    "@erp/miniapp-ui": "https://github.com/Coconut-ERP/erp-miniapp-ui/releases/download/v0.2.0/erp-miniapp-ui-0.2.0.tgz",
+    "@erp/miniapp-ui": "https://github.com/Coconut-ERP/erp-miniapp-ui/releases/download/v0.2.0/erp-miniapp-ui-0.2.1.tgz",
     "@tanstack/react-query": "^5.101.4",
     "erp-sdk": "https://github.com/Coconut-ERP/erp-sdk/releases/download/v0.1.0/erp-sdk-0.1.0.tgz",
     "lucide-react": "^0.525.0",

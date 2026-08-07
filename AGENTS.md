@@ -10,7 +10,7 @@ Before generating or reviewing UI, **read the matching skill** under `skills/`. 
 | --- | --- |
 | Shell, sidebar, canvas, or custom color | [skills/styling.md](skills/styling.md) |
 | New feature / domain component | [skills/component.md](skills/component.md) |
-| New route / page orchestration | [skills/page.md](skills/page.md) |
+| New route / page orchestration | [skills/page.md](skills/page.md) — also add `docs.md` beside `page.tsx` |
 | Reusable pattern composition | [skills/pattern.md](skills/pattern.md) |
 | Follow an existing recipe | [skills/recipe.md](skills/recipe.md) |
 | Review UI quality | [skills/review.md](skills/review.md) |

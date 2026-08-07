@@ -9,7 +9,7 @@ Entry points for agents: root [`AGENTS.md`](../AGENTS.md) / [`CLAUDE.md`](../CLA
 | --- | --- |
 | [styling.md](./styling.md) | Shell, sidebar, canvas, or any custom color in mini apps |
 | [component.md](./component.md) | New feature/domain component |
-| [page.md](./page.md) | New route / page orchestration |
+| [page.md](./page.md) | New route / page orchestration (+ `docs.md` next to `page.tsx`) |
 | [pattern.md](./pattern.md) | Reusable pattern composition |
 | [recipe.md](./recipe.md) | Follow an existing recipe |
 | [review.md](./review.md) | Review UI quality |

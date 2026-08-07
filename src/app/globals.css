@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "@erp/miniapp-ui/styles.css";
+
+/* Paths relative to this file: miniapp-ui-kit/src/app/ */
+@source "../**/*.{ts,tsx}";
+@source "../../node_modules/@erp/miniapp-ui/dist/**/*.{js,cjs}";
+/* Local library (file:../../miniapp-ui) — drop when consuming a published tarball only */
+@source "../../../../miniapp-ui/src/**/*.{ts,tsx}";

@@ -104,7 +104,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex h-dvh overflow-hidden bg-surface p-3">
+    <div className="flex h-dvh overflow-hidden bg-surface md:p-3">
       <div className="flex min-h-0 w-full gap-3">
         <ShellSidebar activeId={activeId} className="hidden md:flex" />
 
@@ -122,7 +122,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   <MenuIcon />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[min(100%,16rem)] border-0 bg-surface p-3">
+              <SheetContent side="left" className="w-[min(100%,16rem)] border-0 bg-surface">
                 <SheetHeader className="sr-only">
                   <SheetTitle>{APP_SHELL.title}</SheetTitle>
                 </SheetHeader>

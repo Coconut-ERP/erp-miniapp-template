@@ -4,7 +4,7 @@ Reference mini app for `@erp/miniapp-ui`. Clone as a starting layout for ERP min
 
 ## Skills (load first)
 
-Before generating or reviewing UI, **read the matching skill** under `docs/skills/` and **fetch `@erp/miniapp-ui` docs via MCP** (`coconut-erp-ui` — see below). Do not invent conventions or component APIs that contradict those sources.
+Before generating or reviewing UI, **read the matching skill** under `docs/skills/` and **library docs in `@erp/miniapp-ui`** (see below). Use MCP only when you need story variants or Storybook preview. Do not invent conventions or component APIs.
 
 | When | Skill |
 | --- | --- |
@@ -76,27 +76,26 @@ bun run schema            # regenerate schema.json from src/lib/erp/schema.ts
 bunx erp doctor           # env + ERP connectivity (needs .env.local)
 ```
 
-## MCP UI docs (`coconut-erp-ui`)
+## Library docs (`@erp/miniapp-ui`)
 
-For `@erp/miniapp-ui` **components, props, patterns, and foundations** — call MCP first. Do not infer APIs from memory, other libraries, or by grepping package source.
+**Primary source** — ships in `node_modules/@erp/miniapp-ui/` after `bun install`. No network required.
 
-| Step | MCP tool | When |
+| Order | Path | When |
 | --- | --- | --- |
-| 1 | `list-all-documentation` | Start of any UI task — discover component and doc IDs |
-| 2 | `get-documentation` | Before using a component or answering prop/API questions — returns stories, usage snippets, and TypeScript props |
-| 3 | `get-documentation-for-story` | A prop or variant is not shown in the first 3 stories |
-| 4 | `get-storybook-story-instructions` | Before creating or editing `*.stories.*` files |
-| 5 | `get-stories-by-component` / `get-changed-stories` | After UI changes — find affected stories (needs Storybook dev server) |
-| 6 | `preview-stories` | After visual changes — verify in Storybook (include preview URLs in the response) |
+| 1 | `llms.txt` | Start of any UI task — index of components, foundations, patterns |
+| 2 | `docs/foundations/`, `docs/patterns/` | Guides (colors, forms, upload, crud, …) |
+| 3 | `dist/index.d.ts` | Props, variants, JSDoc (Purpose, A11y, Do/Don't) |
 
-**Hard rules for MCP**
+Do not infer APIs from memory, other libraries, or by grepping component source.
 
-- Never assume a prop exists — if MCP docs do not show it, it does not exist; say so instead of guessing.
-- Use only IDs returned by `list-all-documentation` (e.g. `ui-button`, `patterns-pageheader`, `foundations-colors--docs`).
-- MCP covers library UI; app-specific conventions stay in [docs/conventions/](docs/conventions/) and [docs/recipes/](docs/recipes/).
+## MCP UI (optional — `coconut-erp-ui`)
 
-## Library docs
+Supplement when configured — story snippets, extra variants, Storybook preview. Not a replacement for shipped docs.
 
-App engineering conventions and copy-ready flows: [docs/conventions/](docs/conventions/) and [docs/recipes/](docs/recipes/).
+| Tool | When |
+| --- | --- |
+| `get-documentation` / `get-documentation-for-story` | Local `index.d.ts` + pattern docs don't show the prop or variant you need |
+| `get-storybook-story-instructions` | Creating or editing `*.stories.*` |
+| `preview-stories` | Visual verification after UI changes |
 
-When wiring ERP data, follow [docs/skills/erp.md](docs/skills/erp.md) and the reference app `../miniapp-workshop`.
+Never assume a prop exists — if neither local docs nor MCP show it, it does not exist.

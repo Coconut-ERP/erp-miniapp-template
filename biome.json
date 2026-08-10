@@ -27,6 +27,12 @@
         "useConst": "error",
         "useImportType": "error",
         "noNonNullAssertion": "error"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "fix": "safe"
+        }
       }
     }
   },

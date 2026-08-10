@@ -6,5 +6,5 @@ Full list + create + edit + delete for one object.
 
 ## Steps
 
-Follow the [CRUD pattern](../../patterns/crud.mdx). Wire React Query (or
+Compose list + create + edit + delete from `@erp/miniapp-ui` primitives. Wire React Query (or
 equivalent) in the app layer.

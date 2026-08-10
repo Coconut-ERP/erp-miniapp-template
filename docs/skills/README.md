@@ -1,7 +1,8 @@
 # AI skills
 
 Load the relevant skill before generating or reviewing UI / ERP wiring.  
-Entry points for agents: root [`AGENTS.md`](../AGENTS.md) / [`CLAUDE.md`](../CLAUDE.md).
+Entry points for agents: root [`AGENTS.md`](../../AGENTS.md) / [`CLAUDE.md`](../../CLAUDE.md).  
+Engineering conventions: [`../conventions/`](../conventions/) · Copy-ready recipes: [`../recipes/`](../recipes/)
 
 ## UI (`@erp/miniapp-ui`)
 
@@ -27,4 +28,4 @@ Entry points for agents: root [`AGENTS.md`](../AGENTS.md) / [`CLAUDE.md`](../CLA
 | [erp-session.md](./erp-session.md) | initData, session, client bridge, `X-Init-Data` |
 | [erp/references/](./erp/references/) | Full SDK API + `erp` CLI (vendored from package) |
 
-Reference app: [`../miniapp-workshop`](../../miniapp-workshop). Env: [`.env.local.example`](../.env.local.example).
+Env: [`.env.local.example`](../../.env.local.example).

@@ -1,3 +1,4 @@
 # Empty strategy
 
-See [patterns/empty](../../patterns/empty.mdx). Distinguish empty vs error vs forbidden.
+Use `@erp/miniapp-ui`'s empty-state component for the empty branch of a page's early-return
+chain. Distinguish empty vs error vs forbidden — each needs its own copy and icon.

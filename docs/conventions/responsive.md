@@ -1,8 +1,8 @@
 # Responsive
 
 Mini apps run inside the ERP shell: desktop sidebar + mobile webview. Screen layouts must
-work in both. See [foundations/responsive](../../foundations/responsive.mdx) for the
-breakpoint scale library components use.
+work in both. Use the breakpoint scale `@erp/miniapp-ui` components use (`md`/`lg` Tailwind
+breakpoints).
 
 ## Layout rules
 

@@ -1,9 +1,8 @@
 # Accessibility convention
 
-PR checklist for mini-app screens built with `@erp/miniapp-ui`. See the library's own
-accessibility rules at [foundations/accessibility](../../foundations/accessibility.mdx) for
-what each component already guarantees. See also the general PR checklist at
-[review](./review.md).
+PR checklist for mini-app screens built with `@erp/miniapp-ui`. Library components already
+guarantee baseline a11y (labels, focus rings, keyboard); this checklist covers what the app
+layer must add on top. See also the general PR checklist at [review](./review.md).
 
 ## Review checklist
 

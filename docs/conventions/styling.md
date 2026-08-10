@@ -1,7 +1,9 @@
 # Styling & colors
 
-Rules for mini apps consuming `@erp/miniapp-ui`. Library internals follow the same
-token rules in [foundations/colors](../../foundations/colors.mdx).
+Rules for mini apps consuming `@erp/miniapp-ui`. Library components already use semantic
+color tokens internally (`bg-primary`, `text-muted-foreground`, `bg-surface`, …) — use those
+same tokens when composing library components; only app chrome (below) uses raw Tailwind
+palette classes.
 
 ## App-only chrome (shell, sidebar)
 
@@ -22,10 +24,10 @@ utilities written **directly** on each element:
    element, not in an indirection layer.
 3. **`bg-[var(--token)]`** for tokens that already have Tailwind classes.
 
-Reference implementation: `examples/miniapp-ui-kit/src/components/app-shell.tsx`.
+Reference implementation: `src/components/app-shell.tsx`.
 
 ## Optional accent backgrounds
 
 Feature cards may use light palette tints for KPI emphasis (`bg-sky-50`, `ring-sky-100/80`)
-when paired with semantic text colors. Follow `examples/miniapp-workshop` /
-`examples/miniapp-ui-kit` feature components.
+when paired with semantic text colors. Follow this app's and `../miniapp-workshop`'s
+feature components.

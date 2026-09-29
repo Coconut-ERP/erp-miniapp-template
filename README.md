@@ -3,7 +3,8 @@
 Reference **mini app layout** for `@erp/miniapp-ui` — clone this project as a starting point.
 
 - UI: [`@erp/miniapp-ui`](https://github.com/Coconut-ERP/erp-miniapp-ui)
-- ERP: [`erp-sdk`](https://github.com/Coconut-ERP/erp-sdk) — see [`skills/erp.md`](skills/erp.md) and `src/lib/erp/*`
+- ERP: [`erp-sdk`](https://github.com/Coconut-ERP/erp-sdk) — see [`docs/skills/erp.md`](docs/skills/erp.md) and `src/lib/erp/*`
+- Conventions: [`docs/conventions/`](docs/conventions/) · Recipes: [`docs/recipes/`](docs/recipes/)
 - Agent entry: [`AGENTS.md`](AGENTS.md) / [`CLAUDE.md`](CLAUDE.md)
 
 ## Install
@@ -76,7 +77,7 @@ Sidebar nav (`src/constants/nav.ts`): `/dashboard`, `/table`, `/requests/new`.
 ## Wire ERP
 
 1. Extend `src/lib/erp/schema.ts` → `bun run schema`.
-2. Replace seed reads in `lib/api/*` with `getErp()` / `erp.objects.*` (see `skills/erp-data.md`).
+2. Replace seed reads in `lib/api/*` with `getErp()` / `erp.objects.*` (see `docs/skills/erp-data.md`).
 3. Switch route wrappers from `withApi` to `withErp`; keep client `api()` (initData already wired).
 4. Update the page’s `docs.md` status to `wired`.
 
@@ -84,5 +85,6 @@ Sidebar nav (`src/constants/nav.ts`): `/dashboard`, `/table`, `/requests/new`.
 
 - Import UI from `@erp/miniapp-ui` only — no local `components/ui`.
 - API keys stay server-side in `lib/erp` / route handlers.
-- New route → add `docs.md` + README row ([`skills/page.md`](skills/page.md)).
-- Styling: [`skills/styling.md`](skills/styling.md).
+- New route → add `docs.md` + README row ([`docs/skills/page.md`](docs/skills/page.md)).
+- Styling: [`docs/skills/styling.md`](docs/skills/styling.md).
+- Conventions/recipes: [`docs/conventions/`](docs/conventions/), [`docs/recipes/`](docs/recipes/).

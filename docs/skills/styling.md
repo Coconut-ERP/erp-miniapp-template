@@ -89,8 +89,7 @@ className={SHELL.canvas}
 ## Accent tints on library components
 
 Occasional stat/card tints (`bg-sky-50`, `bg-violet-50`) are OK for **one-off emphasis**
-inside feature components — same as `examples/miniapp-workshop`. Keep text readable;
-prefer semantic tokens for default surfaces.
+inside feature components. Keep text readable; prefer semantic tokens for default surfaces.
 
 ## Checklist before finishing
 

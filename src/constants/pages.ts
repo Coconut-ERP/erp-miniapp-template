@@ -1,5 +1,5 @@
 /**
- * Page copy — no React, no I/O. See packages/miniapp-ui/docs/conventions/constants.md
+ * Page copy — no React, no I/O. See docs/conventions/constants.md
  */
 export const LIST_PAGE = {
   header: {
@@ -170,5 +170,5 @@ export const FORM_PAGE = {
 export const HUB_PAGE = {
   title: "Mini app starter",
   description:
-    "Reference layout for @erp/miniapp-ui. Clone this example app — folder structure matches packages/miniapp-ui/docs/conventions/folder.md.",
+    "Reference layout for @erp/miniapp-ui. Clone this example app — folder structure matches docs/conventions/folder.md.",
 } as const;

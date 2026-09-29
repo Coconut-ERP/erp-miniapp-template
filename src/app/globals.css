@@ -6,3 +6,9 @@
 @source "../../node_modules/@erp/miniapp-ui/dist/**/*.{js,cjs}";
 /* Local library (file:../../miniapp-ui) — drop when consuming a published tarball only */
 @source "../../../../miniapp-ui/src/**/*.{ts,tsx}";
+
+/* App floor: no text smaller than 14px */
+@theme {
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.25rem;
+}

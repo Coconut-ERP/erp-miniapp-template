@@ -13,7 +13,8 @@
     "lint": "biome check .",
     "format": "biome check --write .",
     "typecheck": "tsc --noEmit",
-    "schema": "bun run scripts/schema.ts"
+    "schema": "bun run scripts/schema.ts",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/package-source.ps1"
   },
   "dependencies": {
     "@erp/miniapp-ui": "https://github.com/Coconut-ERP/erp-miniapp-ui/releases/download/v0.4.1/erp-miniapp-ui-0.4.1.tgz",

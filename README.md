@@ -1,5 +1,7 @@
 # MiniApp UI Kit (reference)
 
+Docs for human: https://zjpdeojgezgv.jp.larksuite.com/docx/KlQtdwI7QomQ6MxfyaQjTIzIpxb?from=from_copylink
+
 Reference **mini app layout** for `@erp/miniapp-ui` — clone this project as a starting point.
 
 - UI: [`@erp/miniapp-ui`](https://github.com/Coconut-ERP/erp-miniapp-ui)
